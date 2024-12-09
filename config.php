@@ -1,8 +1,16 @@
 <?php
-$host = 'localhost';
-$dbname = 'user_system';
-$username = 'root';
-$password = '16102005';
+require_once 'vendor/autoload.php'; // Pastikan composer telah diinstal dan phpdotenv ada
+
+use Dotenv\Dotenv;
+
+// Load file .env
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$host = $_ENV['DB_HOST'];
+$dbname = $_ENV['DB_NAME'];
+$username = $_ENV['DB_USER'];
+$password = $_ENV['DB_PASS'];
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -10,5 +18,4 @@ try {
 } catch (PDOException $e) {
     die("Koneksi ke database gagal: " . $e->getMessage());
 }
-?>
 
