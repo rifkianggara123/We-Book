@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBOOK</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- header section starts -->
+    <header>
+        <a href="#" class="logo"><i class="fas fa-book"></i>WeBook</a>
+        <nav class="navbar">
+            <a class="active" href="#home">Home</a>
+            <a href="koleksibuku.php">Koleksi</a>
+            <a href="review.php">Review</a>
+            <a href="tentangkami.html">Tentang Kami</a>
+            <a href="info.html">Info Lainnya</a>
+        </nav>
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="sukai.php" class="fas fa-heart"></a>
+            <a href="keranjang.php" class="fas fa-shopping-cart"></a>
+            <a href="masuk" class="akun">
+                    <span class="avatar">👤</span> <?php echo $username; ?> <!-- Tampilkan nama pengguna -->
+                </a>
+        </div>
+
+       <div class="logout-link">
+        <form action="logout.php" method="POST">
+            <button type="submit" class="logout-link">
+                <span class="icon"></span>
+                <span class="text">Logout</span>
+            </button>
+        </form>
+    </div>
+    </header>
+    <!-- header section ends -->
+
+    <!-- search form -->
+    <form action="" id="search-form">
+        <input type="search" placeholder="Cari buku di sini..." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+
+    <!-- home section starts -->
+    <section class="home" id="home">
+        <div class="swiper-container home-slider">
+            <div class="swiper-wrapper wrapper">
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>Buku Pilihan</span>
+                        <h3>DUA BELAS "CERITA GLEN ANGGARA"</h3>
+                        <p>Glen Anggara, anak tunggal dari keluarga kaya raya yang memiliki kepintaran dibawah rata-rata. Glen menyukai kebebasan dan hanya ingin melakukan semua hal yang membuatnya bahagia. Sikap absurd dan menyebalkannya selalu membuat orang naik darah.  </p>
+                        <a href="keranjang.php?action=add&id=8" class="btn">Beli Sekarang</a>
+                    </div>
+                    <div class="image">
+                        <img src="buku11.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>Buku Pilihan</span>
+                        <h3>Chamomille</h3>
+                        <p>Alen terpaksa harus berurusan kembali dengan Alan, mantan pacarnya waktu SMP yang diputuskannya tanpa penjelasan. Semua itu terjadi karena janjinya untuk mengabulkan permintaan sahabatnya, Sanda. Alen harus mengajak Alan untuk datang bersama ke acara ulang tahun sekolah. </p>
+                        <a href="keranjang.php?action=add&id=16" class="btn">Beli Sekarang</a>
+                    </div>
+                    <div class="image">
+                        <img src="buku12.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>Buku Pilihan</span>
+                        <h3>Horor Tanah Jawa : 13 Kisah Nyata Bertemu Pocong</h3>
+                        <p>Cerita horor dari Tanah Jawa sudah bukan lagi hal yang asing di telinga masyarakat. Bahkan setiap daerah di pulau tersebut memiliki kisah menyeramkannya masing-masing.</p>
+                        <a href="keranjang.php?action=add&id=17"class="btn">Beli Sekarang</a>
+                    </div>
+                    <div class="image">
+                        <img src="buku13.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- footer section starts  -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>Kontak</h3>
+                <a href="https://wa.me/6289635512295" target="_blank">+6289635512295 (Anisa)</a><br>
+                <a href="https://wa.me/6282176702655" target="_blank">+6282176702655 (Naila)</a><br>
+                <a href="https://wa.me/6281278807083" target="_blank">+6281278807083 (Alya)</a>
+            </div>
+
+            <div class="box">
+                <h3>Sosmed</h3>
+                <a href="https://web.facebook.com/?_rdc=1&_rdr">Facebook</a>
+                <a href="https://twitter.com/i/flow/login">Twitter</a>
+                <a href="https://www.instagram.com/accounts/login/">Instagram</a>
+                <a href="https://www.linkedin.com/login">LinkedIn</a>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="credit"> @ 2024 by <span>Kelompok 3 (Pemrograman Web/PTI-A-2023)</span> </div>
+        
+
+    </section>
+
+    <!-- footer section ends -->
+
+    <!-- loader part  -->
+    <div class="loader-container">
+        <img src="images/loader.gif" alt="">
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

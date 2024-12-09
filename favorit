@@ -1,0 +1,80 @@
+<?php
+session_start();
+include 'config.php';
+
+$conn = new mysqli($host, $username, $password, $dbname);
+
+// Cek koneksi database
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+// Ambil data buku di favorit
+$session_id = session_id();
+$stmt = $conn->prepare("SELECT f.jumlah, b.id AS buku_id, b.judul, b.deskripsi, b.harga, b.gambar
+                        FROM favorit f
+                        JOIN buku b ON f.buku_id = b.id
+                        WHERE f.session_id = ?");
+if (!$stmt) {
+    die("Error preparing statement: " . $conn->error);
+}
+
+$stmt->bind_param("s", $session_id);  // Bind session_id sebagai string
+$stmt->execute();
+$result = $stmt->get_result();
+
+$cart = [];
+$total = 0;
+$discount = 0;
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $cart[] = $row;
+    }
+}
+
+$stmt->close();
+?>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorit</title>
+    <link rel="stylesheet" href="favorit.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Favorit</h1>
+    </header>
+    <div class="heart">
+        <div class="heart-items">
+            <h2>Daftar Favorit</h2>
+            <?php if (empty($cart)): ?>
+                <p>Favorit Anda kosong.</p>
+            <?php else: ?>
+                <ul>
+                    <?php foreach ($cart as $item): ?>
+                    <li>
+                        <img src="images/<?php echo htmlspecialchars($item['gambar']); ?>" alt="<?php echo htmlspecialchars($item['judul']); ?>" class="item-image">
+                        <div class="item-details">
+                            <h3><?php echo htmlspecialchars($item['judul']); ?></h3>
+                            <p><?php echo htmlspecialchars($item['deskripsi']); ?></p>
+                            <p>Rp <?php echo number_format($item['harga'], 0, ',', '.'); ?></p>
+                            <p>Jumlah: <?php echo $item['jumlah']; ?></p>
+                        </div>
+                        <!-- Perbaiki bagian link untuk menambahkan ke favorit -->
+                        <a href="favorit.php?action=delete&id=<?php echo $item['buku_id']; ?>" class="remove-item">Hapus</a>
+                        <a href="favorit.php?action=add&id=<?php echo $item['buku_id']; ?>" class="fas fa-heart"></a>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
+<a href="koleksibuku.php" class="btn-kembali">Kembali</a>
+</body>
+</html>

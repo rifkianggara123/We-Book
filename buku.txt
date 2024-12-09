@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bookstore</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo"><i class="fas fa-book"></i>Book Haven</a>
+        <nav class="navbar">
+            <a class="active" href="#home">Home</a>
+            <a href="#popular">Buku Populer</a>
+            <a href="#about">Tentang Kami</a>
+            <a href="#categories">Kategori</a>
+            <a href="#reviews">Review</a>
+            <a href="#order">Order</a>
+        </nav>
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-shopping-cart"></a>
+        </div>
+    </header>
+
+    <form action="" id="search-form">
+        <input type="search" placeholder="Cari buku..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+
+    <section class="home" id="home">
+        <div class="swiper-container home-slider">
+            <div class="swiper-wrapper wrapper">
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>Buku Pilihan</span>
+                        <h3>The Art of Thinking Clearly</h3>
+                        <p>Buku best-seller karya Rolf Dobelli yang membantu Anda berpikir lebih jernih dan bijak dalam mengambil keputusan.</p>
+                        <a href="#" class="btn">Beli Sekarang</a>
+                    </div>
+                    <div class="image">
+                        <img src="buku1.png" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>Buku Pilihan</span>
+                        <h3>Atomic Habits</h3>
+                        <p>Karya James Clear tentang bagaimana membangun kebiasaan kecil untuk mencapai perubahan besar.</p>
+                        <a href="#" class="btn">Beli Sekarang</a>
+                    </div>
+                    <div class="image">
+                        <img src="buku2.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section class="dishes" id="popular">
+        <h3 class="sub-heading"> Koleksi Kami </h3>
+        <h1 class="heading"> Buku Populer </h1>
+        <div class="box-container">
+            <div class="box">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+                <img src="wibu3.jpg" alt="">
+                <h3>Rich Dad Poor Dad</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span>Rp.85.000</span>
+                <a href="#" class="btn">Tambahkan ke Keranjang</a>
+            </div>
+            <div class="box">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+                <img src="wibu3.jpg" alt="">
+                <h3>Think and Grow Rich</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span>Rp.90.000</span>
+                <a href="#" class="btn">Tambahkan ke Keranjang</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h3 class="sub-heading"> Tentang Book Haven </h3>
+        <h1 class="heading"> Tempat Terbaik untuk Pecinta Buku </h1>
+        <div class="row">
+            <div class="image">
+                <img src="wibu3.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Menghadirkan Buku Berkualitas</h3>
+                <p>Book Haven hadir untuk memuaskan dahaga Anda akan buku-buku bermutu tinggi. Temukan berbagai genre mulai dari fiksi hingga pengembangan diri.</p>
+                <a href="#" class="btn">Pelajari Lebih Lanjut</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="credit"> &copy; 2024 <span>Book Haven</span>. All Rights Reserved. </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

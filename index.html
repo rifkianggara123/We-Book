@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBOOK</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- header section starts -->
+    <header>
+        <a href="#" class="logo"><i class="fas fa-book"></i>WeBook</a>
+        <nav class="navbar">
+            <a class="active" href="#home">Home</a>
+            <a href="masuk.php">Koleksi</a>
+            <a href="masuk.php">Review</a>
+            <a href="tentangkami.html">Tentang Kami</a>
+            <a href="info.html">Info Lainnya</a>
+        </nav>
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="masuk.php" class="fas fa-shopping-cart"></a>
+            
+            <!-- Akun with dropdown options for Login -->
+            <a href="#" class="akun">
+                <span class="avatar">👤</span> Akun
+            </a>
+
+            <!-- Dropdown menu for login options -->
+            <div id="login-options" style="display:none;">
+                <ul>
+                    <li><a href="loginadmin.php">Login Admin</a></li>
+                    <li><a href="masuk.php">Login Pengguna</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </header>
+    <!-- header section ends -->
+
+    <!-- search form -->
+    <form action="" id="search-form">
+        <input type="search" placeholder="Cari buku di sini..." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+
+    <!-- home section starts -->
+    <section class="home" id="home">
+        <div class="swiper-container home-slider">
+            <div class="swiper-wrapper wrapper">
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>Buku Pilihan</span>
+                        <h3>DUA BELAS "CERITA GLEN ANGGARA"</h3>
+                        <p>Glen Anggara, anak tunggal dari keluarga kaya raya yang memiliki kepintaran dibawah rata-rata. Glen menyukai kebebasan dan hanya ingin melakukan semua hal yang membuatnya bahagia. Sikap absurd dan menyebalkannya selalu membuat orang naik darah.  </p>
+                        <a href="#" class="btn">Beli Sekarang</a>
+                    </div>
+                    <div class="image">
+                        <img src="buku11.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>Buku Pilihan</span>
+                        <h3>Chamomille</h3>
+                        <p>Alen terpaksa harus berurusan kembali dengan Alan, mantan pacarnya waktu SMP yang diputuskannya tanpa penjelasan. Semua itu terjadi karena janjinya untuk mengabulkan permintaan sahabatnya, Sanda. Alen harus mengajak Alan untuk datang bersama ke acara ulang tahun sekolah. </p>
+                        <a href="#" class="btn">Beli Sekarang</a>
+                    </div>
+                    <div class="image">
+                        <img src="buku12.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>Buku Pilihan</span>
+                        <h3>Horor Tanah Jawa : 13 Kisah Nyata Bertemu Pocong</h3>
+                        <p>Cerita horor dari Tanah Jawa sudah bukan lagi hal yang asing di telinga masyarakat. Bahkan setiap daerah di pulau tersebut memiliki kisah menyeramkannya masing-masing.</p>
+                        <a href="#" class="btn">Beli Sekarang</a>
+                    </div>
+                    <div class="image">
+                        <img src="buku13.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!-- home section ends -->
+
+    <!-- footer section starts  -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>Kontak</h3>
+                <a href="https://wa.me/6289635512295" target="_blank">+6289635512295 (Anisa)</a><br>
+                <a href="https://wa.me/6282176702655" target="_blank">+6282176702655 (Naila)</a><br>
+                <a href="https://wa.me/6281278807083" target="_blank">+6281278807083 (Alya)</a>
+            </div>
+
+            <div class="box">
+                <h3>Sosmed</h3>
+                <a href="https://web.facebook.com/?_rdc=1&_rdr">Facebook</a>
+                <a href="https://twitter.com/i/flow/login">Twitter</a>
+                <a href="https://www.instagram.com/accounts/login/">Instagram</a>
+                <a href="https://www.linkedin.com/login">LinkedIn</a>
+            </div>
+
+        </div>
+
+        <div class="credit"> @ 2024 by <span>Kelompok 3 (Pemrograman Web/PTI-A-2023) </span> </div>
+
+    </section>
+
+    <!-- footer section ends -->
+
+    <!-- loader part  -->
+    <div class="loader-container">
+        <img src="images/loader.gif" alt="">
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="script.js"></script>
+
+    <!-- JavaScript for displaying login options -->
+    <script>
+        // Menampilkan pilihan login ketika klik pada link akun
+        document.querySelector('.akun').addEventListener('click', function(event) {
+            event.preventDefault();  // Menghindari aksi default dari tag <a>
+            
+            var loginOptions = document.getElementById('login-options');
+            
+            // Toggle (tampilkan/sembunyikan) pilihan login
+            loginOptions.style.display = (loginOptions.style.display === 'none' || loginOptions.style.display === '') ? 'block' : 'none';
+        });
+    </script>
+
+</body>
+
+</html>
