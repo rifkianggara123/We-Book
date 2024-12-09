@@ -1,16 +1,8 @@
 <?php
-require_once 'vendor/autoload.php'; // Memuat library untuk membaca file .env
-
-use Dotenv\Dotenv;
-
-// Load file .env
-$dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
-$host = $_ENV['DB_HOST'];
-$dbname = $_ENV['DB_NAME'];
-$username = $_ENV['DB_USER'];
-$password = $_ENV['DB_PASS'];
+$host = 'localhost';
+$dbname = 'user_system';
+$username = 'root';
+$password = '16102005';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -18,3 +10,5 @@ try {
 } catch (PDOException $e) {
     die("Koneksi ke database gagal: " . $e->getMessage());
 }
+?>
+
